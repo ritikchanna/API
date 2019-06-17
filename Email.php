@@ -24,17 +24,17 @@ try {
     $mail->Port       = 587;                                    // TCP port to connect to
 
     
-	if(isset($_POST))
+	if(!isset($_POST))
 	{
 	http_response_code(400);
 	echo "Missing POST Parameters.";
-	}else if(isset($_POST["receiver"])){
+	}else if(!isset($_POST["receiver"])){
 	http_response_code(400);
 	echo "Missing receiver address.";
-	}else if(isset($_POST["subject"])){
+	}else if(!isset($_POST["subject"])){
 	http_response_code(400);
 	echo "Missing email subject.";
-	}else if(isset($_POST["body"])){
+	}else if(!isset($_POST["body"])){
 	http_response_code(400);
 	echo "Missing email body.";
 	}
